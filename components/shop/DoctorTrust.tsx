@@ -1,33 +1,35 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
+import Image from "next/image";
+import { CLINICIAN_COUNT } from "@/lib/constants";
 
 const doctors = [
   { name: "Dr. Joseph Raccuglia, MD", practice: "Family Medicine", years: "30+ Years",
-    photo: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69da2b5ae75b29e62e394da5_Dise%C3%B1o%20sin%20t%C3%ADtulo%20(18).png",
+    photo: "/images/doctor-raccuglia.png",
     quote: "I share this with my patients as an option for its ability to aid focus." },
   { name: "Dr. John Kasper, DO", practice: "Internal Medicine", years: "30+ Years",
-    photo: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69da2b5adad4106df47d0183_Dise%C3%B1o%20sin%20t%C3%ADtulo%20(23).png",
+    photo: "/images/doctor-kasper.png",
     quote: "I recommend this for people who want to feel relaxed enough to focus without stimulants." },
   { name: "Dr. Rajeev Grover, MD", practice: "Internal Medicine", years: "30+ Years",
-    photo: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69da2b5adc0fe80a840c953c_Dise%C3%B1o%20sin%20t%C3%ADtulo%20(19).png",
+    photo: "/images/doctor-grover.png",
     quote: "I recommend this to my patients for its promising benefits for recall and cognition." },
   { name: "Dr. Nicholas Biassotto", practice: "Family Medicine", years: "45+ Years",
-    photo: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69da2b5af5a90b31b7abd128_Dise%C3%B1o%20sin%20t%C3%ADtulo%20(6).png",
+    photo: "/images/doctor-biasotto.png",
     quote: "Keeps your ability to pay attention steady by reducing stress interference." },
   { name: "Dr. Lloyd Pina, NP", practice: "Family Medicine", years: "10+ Years",
-    photo: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69da2b5ac17ae988fa7d154b_Dise%C3%B1o%20sin%20t%C3%ADtulo%20(16).png",
+    photo: "/images/doctor-pina.png",
     quote: "It does a good job and can help you gain control over your focus." },
   { name: "Dr. Judy Pierson, FNP", practice: "Internal Medicine", years: "13+ Years",
-    photo: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69da2b5ab5f59779f7a3e1ee_Dise%C3%B1o%20sin%20t%C3%ADtulo%20(20).png",
+    photo: "/images/doctor-pierson.png",
     quote: "Can help the body handle mental strain so you can better focus." },
   { name: "Dr. William Fader, NP", practice: "Family Medicine", years: "5 Years",
-    photo: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69da2b5a07e169d0e84bb72a_Dise%C3%B1o%20sin%20t%C3%ADtulo%20(15).png",
+    photo: "/images/doctor-fader.png",
     quote: "Steadies the mind and keeps you mentally sharp, even under pressure." },
   { name: "Dr. Sabeena Faiz, NP", practice: "Primary Care", years: "18+ Years",
-    photo: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69da2b5a23d4bc28eb5016be_Dise%C3%B1o%20sin%20t%C3%ADtulo%20(14).png",
+    photo: "/images/doctor-faiz.png",
     quote: "Helps my patients cope with stress while maintaining focus." },
   { name: "Dr. Jessica Turner, NP", practice: "Family Medicine", years: "10+ Years",
-    photo: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69da2b5ae534894fe0181ab8_Dise%C3%B1o%20sin%20t%C3%ADtulo%20(17).png",
+    photo: "/images/doctor-turner.png",
     quote: "Provides the nutrients needed for calmness and clear thinking." },
 ];
 
@@ -74,29 +76,22 @@ export default function DoctorTrust() {
       <div className="fv-container-md">
         {/* Header lockup: badge inline with title */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-10 max-w-[920px] mx-auto">
-          {/* Badge */}
-          <div className="relative w-32 h-32 flex-shrink-0">
-            <svg viewBox="0 0 128 128" className="w-full h-full">
-              <defs>
-                <linearGradient id="badge-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#4A3375" />
-                  <stop offset="50%" stopColor="#66479C" />
-                  <stop offset="100%" stopColor="#8265B8" />
-                </linearGradient>
-              </defs>
-              <circle cx="64" cy="64" r="60" fill="none" stroke="url(#badge-grad)" strokeWidth="3" />
-              <circle cx="64" cy="64" r="52" fill="white" />
-              <text x="64" y="56" textAnchor="middle" className="font-display" fontSize="22" fontWeight="800" fill="#4A3375">850+</text>
-              <text x="64" y="74" textAnchor="middle" className="font-body" fontSize="9" fontWeight="700" letterSpacing="1.2" fill="#66479C">PHYSICIANS</text>
-              <text x="64" y="92" textAnchor="middle" className="font-sub" fontSize="8" fontStyle="italic" fill="#555759">Verified by FrontRow MD®</text>
-            </svg>
+          {/* Badge — official FrontRow MD Clinicians' Choice */}
+          <div className="flex-shrink-0">
+            <Image
+              src="/images/clinicians-choice-badge.svg"
+              alt={`${CLINICIAN_COUNT}+ Clinicians' Choice — Verified by FrontRow MD`}
+              width={296}
+              height={60}
+              className="h-14 md:h-16 w-auto"
+            />
           </div>
 
           {/* Headline + subline */}
           <div className="text-center md:text-left">
             <span className="fv-eyebrow justify-center md:justify-start inline-flex mb-4">Doctor Trust</span>
             <h2 className="fv-display mb-3">
-              Trusted by <em>850+ physicians.</em>
+              Trusted by <em>{CLINICIAN_COUNT}+ physicians.</em>
             </h2>
             <p className="fv-body-lead text-[16px] max-w-[520px]">
               Doctors independently sharing FlowVeda® with patients. Not paid. Verified.

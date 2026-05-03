@@ -3,49 +3,57 @@ const ingredients = [
     name: "KSM-66® Ashwagandha",
     pills: ["Ayurvedic", "Adaptogen"],
     note: "Supports healthy cortisol levels and the body's stress response.",
-    img: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69e9261193632e0f915eed8e_Ashwagandha-Banner-image.png",
+    img: "/images/ingredient-ashwagandha.png",
+    alt: "KSM-66 Ashwagandha root extract — clinically studied Ayurvedic adaptogen",
   },
   {
     name: "Lion's Mane Mushroom",
     pills: ["Ayurvedic", "Mushroom"],
     note: "Supports Nerve Growth Factor and the neural pathways behind neuroplasticity.",
-    img: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69e92612628709f6e6597395_Lions-Mane-Banner-image.png",
+    img: "/images/ingredient-lions-mane.png",
+    alt: "Lion's Mane mushroom — supports Nerve Growth Factor and neural pathways",
   },
   {
     name: "Bacopa Monnieri",
     pills: ["Ayurvedic"],
     note: "Supports memory, learning, and sustained attention.",
-    img: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69e926112e1efc4a9d4651a9_Bacopa-Monnieri-Banner-image.png",
+    img: "/images/ingredient-bacopa.png",
+    alt: "Bacopa Monnieri — Ayurvedic herb supporting memory and learning",
   },
   {
     name: "Rhodiola Rosea",
     pills: ["Ayurvedic", "Adaptogen"],
     note: "Helps the body adapt to and endure mental and physical stress.",
-    img: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69e92613b4021cd13ead85fa_Rhodiola-Rosea-Banner-image.png",
+    img: "/images/ingredient-rhodiola.png",
+    alt: "Rhodiola Rosea — adaptogen that helps the body adapt to stress",
   },
   {
     name: "L-Theanine",
     pills: ["Ayurvedic", "Amino Acid"],
     note: "Promotes a calm, alert state of relaxed focus.",
-    img: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69e9261206dc8616e562ea67_L-Theanine-Banner-image.png",
+    img: "/images/ingredient-l-theanine.png",
+    alt: "L-Theanine — amino acid promoting calm, alert focus",
   },
   {
     name: "N-Acetyl L-Tyrosine",
     pills: ["Amino Acid"],
     note: "Supports neurotransmitter production for focus under stress.",
-    img: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69e92611c098c0000e9164d7_N-Acetyl-L-Tyrosine-Banner-image.png",
+    img: "/images/ingredient-nalt.png",
+    alt: "N-Acetyl L-Tyrosine — supports neurotransmitter production under stress",
   },
   {
     name: "Vitamin B6",
     pills: ["Vitamin"],
     note: "A cofactor in healthy neurotransmitter synthesis.",
-    img: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69e92614c141ccc299aae643_Vitamin-B6-Banner-image.png",
+    img: "/images/ingredient-vitamin-b6.png",
+    alt: "Vitamin B6 — cofactor in healthy neurotransmitter synthesis",
   },
   {
     name: "Folate",
     pills: ["Vitamin"],
     note: "Supports methylation pathways and neurotransmitter balance.",
-    img: "https://cdn.prod.website-files.com/67fc611cc6ab80a4e678c07a/69e92612e5d2ac490c40bf0f_Folate-Banner-image.png",
+    img: "/images/ingredient-folate.png",
+    alt: "Folate — supports methylation and neurotransmitter balance",
   },
 ];
 
@@ -71,7 +79,7 @@ export default function Ingredients() {
               className="bg-white border-2 border-fv-blue rounded-2xl overflow-hidden shadow-fv-ing hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(45,96,144,0.28)] transition-all duration-200 block"
             >
               <div className="aspect-[16/10] bg-fv-purple-light overflow-hidden">
-                <img src={ing.img} alt={ing.name} className="w-full h-full object-cover" />
+                <img src={ing.img} alt={ing.alt} className="w-full h-full object-cover" />
               </div>
               <div className="p-5">
                 <div className="flex flex-wrap gap-1.5 mb-3">
