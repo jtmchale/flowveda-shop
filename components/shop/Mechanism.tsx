@@ -20,13 +20,14 @@ export default function Mechanism() {
 
         {/* 488ms timing diagram — the moment before */}
         <div className="rounded-2xl border border-fv-purple bg-white p-8 md:p-12 shadow-fv-card relative overflow-hidden">
-          <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+          <div className="absolute inset-x-0 top-[-20%] z-0 flex items-start justify-center pointer-events-none overflow-visible">
             <Image
               src="/images/Brain_Profile_Right.jpeg"
               alt=""
-              width={500}
-              height={750}
-              className="opacity-[0.18] object-contain max-h-[90%] w-auto"
+              width={2000}
+              height={3000}
+              className="opacity-[0.22] object-contain w-auto"
+              style={{ maxHeight: "200%", height: "200%" }}
             />
           </div>
 

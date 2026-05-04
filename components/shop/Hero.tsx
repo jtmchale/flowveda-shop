@@ -109,36 +109,29 @@ export default function Hero() {
         )}
 
         {slide.rightVisual === "product" && (
-          <>
-            {/* Kitchen scene — right half, faded for atmosphere (Path B) */}
-            <div className="absolute inset-y-0 right-0 w-full md:w-1/2">
-              <Image
-                src="/images/taking-flowveda.webp"
-                alt="Woman taking a FlowVeda capsule in her kitchen"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-gradient-to-br from-fv-midnight via-fv-purple-deep/40 to-fv-midnight" />
-          </>
+          <div className="absolute inset-0">
+            <Image
+              src="/images/taking-flowveda.webp"
+              alt="Woman taking a FlowVeda capsule in her kitchen"
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
         )}
 
         {slide.rightVisual === "result" && (
-          <>
-            <div className="absolute inset-y-0 right-0 w-full md:w-1/2">
-              <Image
-                src="/images/embracing-the-mountaintop.webp"
-                alt="Woman on a mountaintop at sunset, arms open, embracing the moment"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-gradient-to-br from-fv-midnight via-fv-purple-deep/40 to-fv-midnight" />
-          </>
+          <div className="absolute inset-0">
+            <Image
+              src="/images/embracing-the-mountaintop.webp"
+              alt="Woman on a mountaintop at sunset, arms open, embracing the moment"
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
+          </div>
         )}
       </div>
 
@@ -244,8 +237,8 @@ export default function Hero() {
                 </span>
               </div>
 
-              {/* Pills row — same style as Doctor Trust translation pills */}
-              <div className="flex flex-wrap gap-1.5 justify-center mb-6 max-w-[380px]">
+              {/* Pills row — Doctor Trust translation pill style */}
+              <div className="flex flex-wrap gap-2 justify-center mb-6 max-w-[420px]">
                 {[
                   "2 bottles",
                   "180 capsules",
@@ -253,12 +246,17 @@ export default function Hero() {
                   "60-day supply",
                   "Ships next business day",
                 ].map((pill, i) => (
-                  <span
+                  <div
                     key={i}
-                    className="font-body font-semibold text-[11px] tracking-[0.04em] text-white/90 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1.5 whitespace-nowrap"
+                    className="bg-white border-t-[3px] border-fv-purple rounded-xl px-4 py-3 shadow-fv-card flex items-center gap-2 whitespace-nowrap"
                   >
-                    {pill}
-                  </span>
+                    <div className="w-6 h-6 rounded-full bg-fv-purple text-white flex items-center justify-center flex-shrink-0 font-bold text-[12px]">
+                      ✓
+                    </div>
+                    <span className="font-body font-semibold text-[14px] text-fv-charcoal">
+                      {pill}
+                    </span>
+                  </div>
                 ))}
               </div>
 

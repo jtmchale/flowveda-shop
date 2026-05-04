@@ -17,13 +17,21 @@ export default function Reframe() {
           sizes="100vw"
           className="object-cover opacity-40"
         />
+        {/* Vertical fade — top half more transparent than bottom */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "linear-gradient(to bottom, rgba(238,240,234,0.85) 0%, rgba(238,240,234,0.45) 35%, rgba(238,240,234,0) 70%, rgba(238,240,234,0) 100%)",
+          }}
+        />
       </div>
 
       <div className="fv-container-md relative z-10">
         <div className="text-center max-w-[820px] mx-auto mb-14">
           <span className="fv-eyebrow justify-center inline-flex mb-7">The Reframe</span>
           <h2 className="fv-display">
-            You do have a choice. <em>Most people just never recognize the moment.</em>
+            You do have a choice.
+            <em className="block mt-2">Most people just never recognize the moment.</em>
           </h2>
         </div>
 
@@ -45,7 +53,7 @@ export default function Reframe() {
           ))}
         </div>
 
-        <p className="text-center mt-14 max-w-[680px] mx-auto font-display font-semibold text-[22px] text-fv-charcoal leading-[1.45]">
+        <p className="text-center mt-14 max-w-[680px] mx-auto font-display font-semibold text-[30px] text-fv-charcoal leading-[1.45]">
           Your biology is not broken. <span className="text-fv-purple font-sub italic font-normal">It is just outdated for this environment.</span>
         </p>
       </div>
