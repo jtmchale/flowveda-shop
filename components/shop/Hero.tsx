@@ -117,11 +117,9 @@ export default function Hero() {
                 alt="Woman taking a FlowVeda capsule in her kitchen"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover opacity-40"
+                className="object-cover"
                 priority
               />
-              {/* Soft scrim — keeps the offer card pop without losing the image */}
-              <div className="absolute inset-0 bg-gradient-to-l from-fv-midnight/50 via-fv-midnight/35 to-fv-midnight/55" />
             </div>
             <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-gradient-to-br from-fv-midnight via-fv-purple-deep/40 to-fv-midnight" />
           </>
@@ -138,7 +136,6 @@ export default function Hero() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-fv-midnight/10 to-fv-midnight/40" />
             </div>
             <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-gradient-to-br from-fv-midnight via-fv-purple-deep/40 to-fv-midnight" />
           </>
